@@ -12,12 +12,14 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          'data-cfasync': false,
-          'src': '/js/banner.js',
+          src: '/js/banner.js',
         },
         {
           'data-cfasync': false,
-          'src': '/js/banner-ext.js',
+          'src': '/js/banner-adblock.js',
+        },
+        {
+          src: '/js/banner-adblock-ext.js',
         },
       ],
     },
