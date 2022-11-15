@@ -10,6 +10,11 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Nuxt3 TikTok Downloader' },
         { name: 'propeller', content: '71cf8ce19fcabe2618d829817bb5b22a' },
       ],
+      script: [
+        {
+          children: '(function (s, u, z, p) { s.src = u, s.setAttribute(\'data-zone\', z), p.appendChild(s) })(document.createElement(\'script\'), \'https://inklinkor.com/tag.min.js\', 5526796, document.body || document.documentElement)',
+        },
+      ],
     },
   },
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
