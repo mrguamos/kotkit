@@ -12,7 +12,12 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          children: '(function (s, u, z, p) { s.src = u, s.setAttribute(\'data-zone\', z), p.appendChild(s) })(document.createElement(\'script\'), \'https://inklinkor.com/tag.min.js\', 5526796, document.body || document.documentElement)',
+          'data-cfasync': false,
+          'src': '/js/banner.js',
+        },
+        {
+          'data-cfasync': false,
+          'src': '/js/banner-ext.js',
         },
       ],
     },
