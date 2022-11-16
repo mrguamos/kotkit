@@ -9,6 +9,7 @@ export default defineNuxtConfig({
       meta: [
         { name: 'description', content: 'Nuxt3 TikTok Downloader' },
         { name: 'propeller', content: '71cf8ce19fcabe2618d829817bb5b22a' },
+        { name: 'propeller', content: '1e6f51485f194e44ddc28567e2a28e95' },
       ],
       script: [
         {
