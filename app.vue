@@ -4,12 +4,12 @@ import type { RootObject } from './types/tiktok'
 const videoId = ref('')
 const link = ref('')
 const loading = ref(false)
+const path = '/api/download'
 const generateLink = async () => {
   if (videoId.value) {
     try {
       loading.value = true
-      const url = '/api/download'
-      const data = await $fetch<RootObject>(url, {
+      const data = await $fetch<RootObject>(path, {
         params: {
           aweme_id: videoId.value,
         },
