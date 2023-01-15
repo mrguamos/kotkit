@@ -1,41 +1,35 @@
 <script setup lang="ts">
-import type { RootObject } from './types/tiktok'
-
 const videoId = ref('')
 const link = ref('')
 const loading = ref(false)
 const path = '/api/download'
+const router = useRouter()
 const generateLink = async () => {
   if (videoId.value) {
-    try {
-      loading.value = true
-      const data = await $fetch<RootObject>(path, {
-        params: {
-          aweme_id: videoId.value,
-        },
-      })
-      link.value = data?.aweme_list[0].video.play_addr.url_list[0] ?? ''
-    }
-    finally {
-      loading.value = false
-    }
+    const routeData = router.resolve({
+      path,
+      query: {
+        aweme_id: videoId.value,
+      },
+    })
+    window.open(routeData.href, '_blank')
   }
 }
 </script>
 
 <template>
-  <div class="flex flex-col justify-center items-center w-full min-h-screen space-y-10">
+  <div class="flex min-h-screen w-full flex-col items-center justify-center space-y-10">
     <div class="flex flex-col">
-      <span class="flex place-self-end animate-ping absolute w-2 h-2 rounded-full bg-red-500 opacity-75" />
-      <span class="relative text-7xl font-extrabold text-center text-yellow-500 ">TikTok <span class="text-white">Downloader</span></span>
+      <span class="absolute flex h-2 w-2 animate-ping place-self-end rounded-full bg-red-500 opacity-75" />
+      <span class="relative text-center text-7xl font-extrabold text-yellow-500 ">TikTok <span class="text-white">Downloader</span></span>
     </div>
     <Loading v-show="loading" />
-    <div :class="{ invisible: loading }" class="flex flex-col items-center w-full gap-y-5">
-      <input v-model="videoId" type="text" placeholder="VIDEO ID" class="text-center p-2 rounded-md text-black max-w-sm w-full">
-      <button class="border-green-500 border-2 rounded-md py-2 px-4 w-48 text-center" @click="generateLink">
+    <div :class="{ invisible: loading }" class="flex w-full flex-col items-center gap-y-5">
+      <input v-model="videoId" type="text" placeholder="VIDEO ID" class="w-full max-w-sm rounded-md p-2 text-center text-black">
+      <button class="w-48 rounded-md border-2 border-green-500 py-2 px-4 text-center" @click="generateLink">
         Generate Link
       </button>
-      <NuxtLink :class="{ invisible: !link }" :to="link" target="_blank" class="text-center border-2 border-teal-500 py-2 px-4 rounded-md w-48">
+      <NuxtLink :class="{ invisible: !link }" :to="link" target="_blank" class="w-48 rounded-md border-2 border-teal-500 py-2 px-4 text-center">
         Open
       </NuxtLink>
     </div>
