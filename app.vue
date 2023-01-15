@@ -1,18 +1,6 @@
 <script setup lang="ts">
 const url = ref('')
 const path = '/api/download'
-const router = useRouter()
-const download = async () => {
-  if (url.value) {
-    const routeData = router.resolve({
-      path,
-      query: {
-        url: url.value,
-      },
-    })
-    window.open(routeData.href, '_blank')
-  }
-}
 </script>
 
 <template>
@@ -24,9 +12,9 @@ const download = async () => {
 
     <div class="flex w-full flex-col items-center gap-y-5">
       <input v-model="url" type="text" placeholder="Paste URL here" class="w-full max-w-sm rounded-md p-2 text-center text-black">
-      <button class="w-48 rounded-md border-2 border-green-500 py-2 px-4 text-center" @click="download">
+      <a class="w-48 rounded-md border-2 border-green-500 py-2 px-4 text-center" :href="`${path}?url=${url}`" target="_blank">
         Download
-      </button>
+      </a>
     </div>
   </div>
 </template>
