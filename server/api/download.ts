@@ -1,6 +1,6 @@
 import type { RootObject } from './../../types/tiktok'
 export default eventHandler(async (event) => {
-  const url = 'https://api19-core-useast5.us.tiktokv.com/aweme/v1/feed/'
+  const url = 'https://api.tiktokv.com/aweme/v1/feed/'
   const data = await $fetch<RootObject>(url, {
     params: getQuery(event),
   })
