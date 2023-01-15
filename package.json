@@ -6,7 +6,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.30.1",

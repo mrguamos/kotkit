@@ -1,0 +1,13 @@
+# flyctl launch added from .gitignore
+**/node_modules
+**/*.log*
+**/.nuxt
+**/.nitro
+**/.cache
+**/.output
+**/.env
+**/dist
+
+# flyctl launch added from node_modules/mkdir/.gitignore
+node_modules/mkdir/**/node_modules
+fly.toml
