@@ -18,5 +18,7 @@
     "eslint-plugin-tailwindcss": "^3.6.2",
     "nuxt": "^3.0.0-rc.14"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@nuxtjs/robots": "^3.0.0"
+  }
 }

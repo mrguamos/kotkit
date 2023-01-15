@@ -24,7 +24,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
+  modules: ['@nuxtjs/robots', '@nuxtjs/tailwindcss', '@nuxt/image-edge'],
   tailwindcss: {
     exposeConfig: true,
   },
