@@ -4,7 +4,7 @@ const link = ref('')
 const loading = ref(false)
 const path = '/api/download'
 const router = useRouter()
-const generateLink = async () => {
+const download = async () => {
   if (videoId.value) {
     const routeData = router.resolve({
       path,
@@ -26,12 +26,9 @@ const generateLink = async () => {
     <Loading v-show="loading" />
     <div :class="{ invisible: loading }" class="flex w-full flex-col items-center gap-y-5">
       <input v-model="videoId" type="text" placeholder="VIDEO ID" class="w-full max-w-sm rounded-md p-2 text-center text-black">
-      <button class="w-48 rounded-md border-2 border-green-500 py-2 px-4 text-center" @click="generateLink">
-        Generate Link
+      <button class="w-48 rounded-md border-2 border-green-500 py-2 px-4 text-center" @click="download">
+        Download
       </button>
-      <NuxtLink :class="{ invisible: !link }" :to="link" target="_blank" class="w-48 rounded-md border-2 border-teal-500 py-2 px-4 text-center">
-        Open
-      </NuxtLink>
     </div>
   </div>
 </template>
