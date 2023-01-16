@@ -1,6 +1,16 @@
 <script setup lang="ts">
 const url = ref('')
 const path = '/api/download'
+
+const showAds = () => {
+  const script = document.createElement('script')
+  script.src = '//arsnivyr.com/1?z=5652029'
+  script.async = false
+  script.setAttribute('data-cfasync', 'false')
+  document.querySelector('head')?.appendChild(
+    script,
+  )
+}
 </script>
 
 <template>
@@ -12,7 +22,7 @@ const path = '/api/download'
 
     <div class="flex w-full flex-col items-center gap-y-5">
       <input v-model="url" type="text" placeholder="Paste URL here" class="w-full max-w-sm rounded-md p-2 text-center text-black">
-      <a class="w-48 rounded-md border-2 border-green-500 py-2 px-4 text-center" :href="`${path}?url=${url}`" target="_blank">
+      <a class="w-48 rounded-md border-2 border-green-500 py-2 px-4 text-center" :href="`${path}?url=${url}`" target="_blank" @click="showAds">
         Download
       </a>
     </div>

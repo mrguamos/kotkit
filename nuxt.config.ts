@@ -12,9 +12,6 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: '/js/banner.js',
-        },
-        {
           'data-cfasync': false,
           'src': '/js/banner-adblock.js',
         },
