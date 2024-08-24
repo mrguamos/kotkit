@@ -19,11 +19,12 @@ export default eventHandler(async (event) => {
     }
     const videoId = path.substring(path.lastIndexOf('/') + 1, path.length)
     if (videoId) {
-      const url = 'https://api.tiktokv.com/aweme/v1/feed/'
+      const url = 'https://api22-normal-c-alisg.tiktokv.com/aweme/v1/feed/'
       const data: RootObject = await $fetch(url, {
         params: {
           aweme_id: videoId,
         },
+        method: 'OPTIONS',
       })
       const video = await $fetch<Blob>(data?.aweme_list[0].video.play_addr.url_list[0] ?? '')
       const arrayBuffer = await video.arrayBuffer()
